@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.quizz.mainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+
+        <action
+            android:id="@+id/action_mainMenuFragment_to_quizTopicFragment"
+            app:destination="@id/quizTopicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showQuestionFragment"
+        android:name="com.example.quizz.showQuestionFragment"
+        android:label="fragment_show_question"
+        tools:layout="@layout/fragment_show_question" >
+
+        <action
+            android:id="@+id/action_showQuestionFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_showQuestionFragment_to_quizTopicFragment"
+            app:destination="@id/quizTopicFragment" />
+        <argument
+            android:name="topic_related_questions"
+            app:argType="com.example.quizz.Question" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizTopicFragment"
+        android:name="com.example.quizz.quizTopicFragment"
+        android:label="fragment_quiz_topic"
+        tools:layout="@layout/fragment_quiz_topic" >
+
+        <action
+            android:id="@+id/action_quizTopicFragment_to_showQuestionFragment"
+            app:destination="@id/showQuestionFragment" />
+        <action
+            android:id="@+id/action_quizTopicFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizz.resultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+
+        <argument
+            android:name="true_false_result"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_resultFragment_to_quizTopicFragment"
+            app:destination="@id/quizTopicFragment" />
+    </fragment>
+</navigation>

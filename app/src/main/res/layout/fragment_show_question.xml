@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg_image"
+    tools:context=".showQuestionFragment">
+
+    <TextView
+        android:id="@+id/QnumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Question"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/QstringTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_border"
+        android:text="question string question string question string question string question string"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/QnumberTextView" />
+
+    <!-- Seçenekler Radio Group -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/QstringTextView">
+
+        <RadioButton
+            android:id="@+id/firstChoiceRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:layout_margin="4dp"
+            android:background="@drawable/radio_button_border"
+            android:textColor="@drawable/radio_button_text_color"
+            android:padding="10dp"
+            android:buttonTint="@color/white" />
+
+        <RadioButton
+            android:id="@+id/secondChoiceRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:layout_margin="4dp"
+            android:background="@drawable/radio_button_border"
+            android:textColor="@drawable/radio_button_text_color"
+            android:padding="10dp"
+            android:buttonTint="@color/white" />
+
+        <RadioButton
+            android:id="@+id/thirdChoiceRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:layout_margin="4dp"
+            android:background="@drawable/radio_button_border"
+            android:textColor="@drawable/radio_button_text_color"
+            android:padding="10dp"
+            android:buttonTint="@color/white" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Back"
+            android:background="@drawable/button_border"
+            android:textColor="#03A9F4"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:onClick="backFunction" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="#03A9F4"
+            android:background="@drawable/button_border"
+            android:backgroundTint="#03A9F4"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:onClick="nextFunction" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
